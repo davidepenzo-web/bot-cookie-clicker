@@ -386,17 +386,13 @@ class ScreenReader:
             mean_g = float(half[:, :, 1].mean())
             mean_b = float(half[:, :, 2].mean())
 
-            # Determina se la riga e' visibile (struttura sbloccata)
-            # e se e' acquistabile (abbastanza luminosa/colorata)
+            # Discriminatore calibrato su screenshot reale del gioco:
+            # Acquistabile:     R - B > +12  (sfondo caldo marrone)
+            # Non acquistabile: R - B <  -5  (sfondo freddo grigio-blu)
+            # Non visibile:     brightness < 30 (struttura non ancora sbloccata)
             brightness = (mean_r + mean_g + mean_b) / 3
-
-            # Riga completamente scura = struttura non ancora disponibile
             visible    = brightness > 30
-
-            # Riga acquistabile: sfondo piu' chiaro e caldo (marrone dorato)
-            # Riga non acquistabile: sfondo piu' scuro e freddo (grigio-marrone)
-            # Soglia calibrata sullo screenshot fornito
-            affordable = visible and mean_r > 110 and mean_r > mean_b * 1.3
+            affordable = visible and (mean_r - mean_b) > 5
 
             log.debug(
                 f"[SHOP] {name:<20} R={mean_r:.0f} G={mean_g:.0f} B={mean_b:.0f} "

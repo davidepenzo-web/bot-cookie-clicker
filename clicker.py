@@ -139,8 +139,12 @@ class Clicker:
         y += random.randint(-3, 3)
 
         try:
-            pyautogui.moveTo(x, y, duration=0.08)
-            pyautogui.click()
+            # Click diretto senza moveTo: evita di triggerare
+            # l'espansione del pannello informativo nel negozio
+            pyautogui.click(x, y)
+            # Riporta subito il mouse sul cookie principale cosi'
+            # non resta sul negozio e non espande altri pannelli
+            self.move_away()
             self._last_buy_time[name] = time.time()
             log.debug(f"[CLICK] Acquistato '{name}' @ ({x}, {y})")
         except pyautogui.FailSafeException:
@@ -168,8 +172,8 @@ class Clicker:
 
         x, y = click_pos
         try:
-            pyautogui.moveTo(x, y, duration=0.08)
-            pyautogui.click()
+            pyautogui.click(x, y)
+            self.move_away()
             self._last_buy_time[name] = time.time()
             log.debug(f"[CLICK] Upgrade {upgrade.get('index')} @ ({x}, {y})")
         except pyautogui.FailSafeException:
