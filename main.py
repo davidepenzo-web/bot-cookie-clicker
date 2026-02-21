@@ -25,7 +25,7 @@ logging.basicConfig(
     format="%(asctime)s [%(levelname)s] %(message)s",
     handlers=[
         logging.StreamHandler(sys.stdout),
-        logging.FileHandler(f"bot_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log")
+        logging.FileHandler(f"bot_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log", encoding="utf-8")
     ]
 )
 log = logging.getLogger(__name__)
@@ -194,7 +194,7 @@ def main():
         for t in threads:
             t.join(timeout=2)
 
-        log.info("[STOP] Bot fermato. Arrivederci! 🍪")
+        log.info("[STOP] Bot fermato. Arrivederci!")
 
 
 if __name__ == "__main__":
