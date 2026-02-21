@@ -1,7 +1,17 @@
-APPLICATION FOR COOCKIE CLICKER IN ITALIAN
+APPLICATION FOR COOKIE CLICKER IN ENGLISH
 
 Creata nel 21/02/2026 per motivi personali
 
-REQUISITI:
-Per usare questo codice bisogna scaricare tutti i file e tenerli in una stessa cartella, eseguire il main su l terminale del vostro editor di testo e dovrebbe funzionare.
-Solo per uso personale, funziona solo per la versione pagata di Steam e solo nella lingua inglese.
+📋 Requirements
+To ensure the script runs correctly, please follow these steps:
+
+File Setup: Download all files and place them within the same directory.
+
+Execution: Run the main file directly through your code editor's terminal.
+
+⚠️ Important Notes
+Personal Use Only: This software is provided for non-commercial, personal use.
+
+Compatibility: * Works only with the paid version of Steam.
+
+Supports the English language only.
