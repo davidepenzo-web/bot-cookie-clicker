@@ -142,6 +142,15 @@ def main():
     game_state    = GameState(screen_reader)
     strategy      = Strategy()
 
+    # Conto alla rovescia: dai tempo all'utente di passare al gioco
+    countdown = 5
+    print("")
+    for i in range(countdown, 0, -1):
+        print(f"  Il bot partirà tra {i} secondi... (passa al gioco adesso!)", end="\r")
+        time.sleep(1)
+    print("  Partenza!                                              ")
+    print("")
+
     # Prima lettura dello stato prima di avviare i thread
     log.info("[INIT] Prima lettura dello stato del gioco...")
     game_state.update()
