@@ -1,0 +1,78 @@
+2026-02-21 21:14:29,984 [INFO] ==================================================
+2026-02-21 21:14:29,985 [INFO]   🍪 Cookie Clicker Bot — Avvio
+2026-02-21 21:14:29,985 [INFO] ==================================================
+2026-02-21 21:14:32,974 [INFO] [INIT] Cerco la finestra di Cookie Clicker su Steam...
+2026-02-21 21:14:33,281 [INFO] [WINDOW] Finestra trovata: WindowRect(left=-9, top=-9, width=1938, height=1038)
+2026-02-21 21:14:33,287 [INFO] [INIT] Finestra trovata: WindowRect(left=-9, top=-9, width=1938, height=1038)
+2026-02-21 21:14:33,297 [WARNING] [SCREEN] 'golden_cookie_template.png' non trovato. Golden Cookie detection disabilitata finché non lo crei. Vedi docstring _load_golden_template() per le istruzioni.
+2026-02-21 21:14:38,419 [INFO] [INIT] Prima lettura dello stato del gioco...
+2026-02-21 21:14:46,014 [INFO] [INIT] Stato iniziale: GameState(cookies=0, cps=0.0, buildings=0, upgrades=8)
+2026-02-21 21:14:46,015 [INFO] [CLICKER] Avviato — 20 click/sec
+2026-02-21 21:14:46,015 [INFO] [THREAD] 'CookieClicker' avviato.
+2026-02-21 21:14:46,016 [INFO] [GOLDEN] Scanner avviato — ogni 0.5s
+2026-02-21 21:14:46,017 [INFO] [THREAD] 'GoldenCookie' avviato.
+2026-02-21 21:14:46,071 [INFO] [BUY] Loop acquisti avviato — ogni 2.0s
+2026-02-21 21:14:46,071 [INFO] [THREAD] 'BuyLoop' avviato.
+2026-02-21 21:14:46,152 [INFO] 
+2026-02-21 21:14:46,170 [INFO] ✅ Bot attivo! Premi CTRL+C per fermarlo.
+2026-02-21 21:14:46,215 [INFO] 
+2026-02-21 21:15:00,406 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-21 21:15:07,385 [INFO] [GOLDEN] ✨ Golden Cookie trovato a (256, 532)! Click!
+2026-02-21 21:15:15,920 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-21 21:15:16,235 [INFO] [STATS] 🍪 Cookie: 0 | CPS: 0.0 | Strutture: 0
+2026-02-21 21:15:20,778 [INFO] [GOLDEN] ✨ Golden Cookie trovato a (264, 560)! Click!
+2026-02-21 21:15:27,765 [INFO] [GOLDEN] ✨ Golden Cookie trovato a (316, 554)! Click!
+2026-02-21 21:15:31,211 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-21 21:15:38,074 [INFO] [GOLDEN] ✨ Golden Cookie trovato a (299, 538)! Click!
+2026-02-21 21:15:40,535 [INFO] [GOLDEN] ✨ Golden Cookie trovato a (287, 540)! Click!
+2026-02-21 21:15:46,237 [INFO] [STATS] 🍪 Cookie: 0 | CPS: 0.0 | Strutture: 0
+2026-02-21 21:15:47,463 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-21 21:16:02,765 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-21 21:16:10,215 [INFO] [GOLDEN] ✨ Golden Cookie trovato a (279, 519)! Click!
+2026-02-21 21:16:16,251 [INFO] [STATS] 🍪 Cookie: 0 | CPS: 0.0 | Strutture: 0
+2026-02-21 21:16:17,880 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-21 21:16:32,121 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-21 21:16:37,299 [INFO] [GOLDEN] ✨ Golden Cookie trovato a (294, 566)! Click!
+2026-02-21 21:16:37,963 [INFO] [GOLDEN] ✨ Golden Cookie trovato a (260, 525)! Click!
+2026-02-21 21:16:46,264 [INFO] [STATS] 🍪 Cookie: 0 | CPS: 0.0 | Strutture: 0
+2026-02-21 21:16:47,621 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-21 21:17:02,326 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-21 21:17:02,535 [INFO] [GOLDEN] ✨ Golden Cookie trovato a (278, 521)! Click!
+2026-02-21 21:17:09,600 [INFO] [GOLDEN] ✨ Golden Cookie trovato a (256, 560)! Click!
+2026-02-21 21:17:16,266 [INFO] [STATS] 🍪 Cookie: 0 | CPS: 0.0 | Strutture: 0
+2026-02-21 21:17:17,188 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-21 21:17:31,064 [INFO] 
+2026-02-21 21:17:31,065 [INFO] [STOP] CTRL+C ricevuto — arresto del bot...
+2026-02-21 21:17:31,080 [ERROR] [STATE] Errore durante update(): (3221225786, 'ObjectCache(00007ffa0bd54560)::~ObjectCache(): WARNING! LEAK! object 000001ce6c871b40 still has count 1 (id C:\\Program Files\\Tesseract-OCR/tessdata/eng.traineddatalstm-punc-dawg) ObjectCache(00007ffa0bd54560)::~ObjectCache(): WARNING! LEAK! object 000001ce6c849e50 still has count 1 (id C:\\Program Files\\Tesseract-OCR/tessdata/eng.traineddatalstm-word-dawg) ObjectCache(00007ffa0bd54560)::~ObjectCache(): WARNING! LEAK! object 000001ce6ea30450 still has count 1 (id C:\\Program Files\\Tesseract-OCR/tessdata/eng.traineddatalstm-number-dawg)')
+Traceback (most recent call last):
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\game_state.py", line 72, in update
+    self._update_buildings()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\game_state.py", line 103, in _update_buildings
+    buildings = self.screen_reader.read_shop()
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\screen_reader.py", line 352, in read_shop
+    text = self._ocr(img)
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\screen_reader.py", line 239, in _ocr
+    text = pytesseract.image_to_string(
+        img,
+        config=f"--psm 7 {config_str}".strip()
+    )
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 486, in image_to_string
+    return {
+           ~
+    ...<2 lines>...
+        Output.STRING: lambda: run_and_get_output(*args),
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    }[output_type]()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 489, in <lambda>
+    Output.STRING: lambda: run_and_get_output(*args),
+                           ~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 352, in run_and_get_output
+    run_tesseract(**kwargs)
+    ~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 284, in run_tesseract
+    raise TesseractError(proc.returncode, get_errors(error_string))
+pytesseract.pytesseract.TesseractError: (3221225786, 'ObjectCache(00007ffa0bd54560)::~ObjectCache(): WARNING! LEAK! object 000001ce6c871b40 still has count 1 (id C:\\Program Files\\Tesseract-OCR/tessdata/eng.traineddatalstm-punc-dawg) ObjectCache(00007ffa0bd54560)::~ObjectCache(): WARNING! LEAK! object 000001ce6c849e50 still has count 1 (id C:\\Program Files\\Tesseract-OCR/tessdata/eng.traineddatalstm-word-dawg) ObjectCache(00007ffa0bd54560)::~ObjectCache(): WARNING! LEAK! object 000001ce6ea30450 still has count 1 (id C:\\Program Files\\Tesseract-OCR/tessdata/eng.traineddatalstm-number-dawg)')
+2026-02-21 21:17:31,098 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-21 21:17:33,345 [INFO] [STOP] Bot fermato. Arrivederci!

@@ -1,0 +1,49 @@
+2026-02-21 21:12:29,607 [INFO] ==================================================
+2026-02-21 21:12:29,607 [INFO]   🍪 Cookie Clicker Bot — Avvio
+2026-02-21 21:12:29,608 [INFO] ==================================================
+2026-02-21 21:12:30,836 [INFO] [INIT] Cerco la finestra di Cookie Clicker su Steam...
+2026-02-21 21:12:31,172 [INFO] [WINDOW] Finestra trovata: WindowRect(left=-9, top=-9, width=1938, height=1038)
+2026-02-21 21:12:31,177 [INFO] [INIT] Finestra trovata: WindowRect(left=-9, top=-9, width=1938, height=1038)
+2026-02-21 21:12:31,188 [WARNING] [SCREEN] 'golden_cookie_template.png' non trovato. Golden Cookie detection disabilitata finché non lo crei. Vedi docstring _load_golden_template() per le istruzioni.
+2026-02-21 21:12:36,239 [INFO] [INIT] Prima lettura dello stato del gioco...
+2026-02-21 21:12:43,997 [INFO] [INIT] Stato iniziale: GameState(cookies=0, cps=0.0, buildings=2033, upgrades=8)
+2026-02-21 21:12:43,999 [INFO] [CLICKER] Avviato — 20 click/sec
+2026-02-21 21:12:43,999 [INFO] [THREAD] 'CookieClicker' avviato.
+2026-02-21 21:12:44,000 [INFO] [GOLDEN] Scanner avviato — ogni 0.5s
+2026-02-21 21:12:44,000 [INFO] [THREAD] 'GoldenCookie' avviato.
+2026-02-21 21:12:44,051 [INFO] [BUY] Loop acquisti avviato — ogni 2.0s
+2026-02-21 21:12:44,051 [INFO] [THREAD] 'BuyLoop' avviato.
+2026-02-21 21:12:44,133 [INFO] 
+2026-02-21 21:12:44,135 [INFO] ✅ Bot attivo! Premi CTRL+C per fermarlo.
+2026-02-21 21:12:44,136 [INFO] 
+2026-02-21 21:12:53,009 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-21 21:13:03,741 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-21 21:13:14,137 [INFO] [STATS] 🍪 Cookie: 0 | CPS: 0.0 | Strutture: 2033
+2026-02-21 21:13:14,721 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-21 21:13:25,560 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-21 21:13:36,587 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-21 21:13:40,726 [ERROR] [STATE] Errore durante update(): screen grab failed
+Traceback (most recent call last):
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\game_state.py", line 72, in update
+    self._update_buildings()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\game_state.py", line 103, in _update_buildings
+    buildings = self.screen_reader.read_shop()
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\screen_reader.py", line 349, in read_shop
+    img = ImageGrab.grab(bbox=bbox)
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\PIL\ImageGrab.py", line 89, in grab
+    offset, size, data = Image.core.grabscreen_win32(
+                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        include_layered_windows,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+        all_screens,
+        ^^^^^^^^^^^^
+        int(window) if window is not None else 0,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+OSError: screen grab failed
+2026-02-21 21:13:40,728 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-21 21:13:43,663 [INFO] 
+2026-02-21 21:13:43,664 [INFO] [STOP] CTRL+C ricevuto — arresto del bot...
+2026-02-21 21:13:44,144 [INFO] [STOP] Bot fermato. Arrivederci!

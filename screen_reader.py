@@ -217,30 +217,42 @@ class ScreenReader:
     def _ocr(self, img: Image.Image, config_str: str = "") -> str:
         """
         Esegue OCR su un'immagine PIL. Preprocessa l'immagine per migliorare
-        l'accuratezza (scala, contrasto, conversione in bianco/nero).
+        l'accuratezza. Usa whitelist numerica per evitare confusione con
+        i separatori italiani (punto = migliaia, virgola = decimale).
         """
         if not TESSERACT_AVAILABLE or pytesseract is None:
             return ""
 
-        # Upscale x2 per migliorare l'OCR su testi piccoli
+        # Upscale x3 per migliorare l'OCR su testi piccoli
         w, h = img.size
-        img = img.resize((w * 2, h * 2), Image.Resampling.LANCZOS)
+        img = img.resize((w * 3, h * 3), Image.Resampling.LANCZOS)
 
         # Contrasto aumentato
-        img = ImageEnhance.Contrast(img).enhance(2.5)
+        img = ImageEnhance.Contrast(img).enhance(3.0)
 
         # Converti in scala di grigi
         img = img.convert("L")
 
-        # Soglia: rende il testo nero su bianco
+        # Se la media e' scura (testo chiaro su sfondo scuro), inverti
+        img_array = np.array(img)
+        if img_array.mean() < 128:
+            img = Image.fromarray(255 - img_array)
+
+        # Soglia binaria
         lut = [0] * 128 + [255] * 128
         img = img.point(lut)
 
-        text = pytesseract.image_to_string(
-            img,
-            config=f"--psm 7 {config_str}".strip()
-        )
-        return text.strip()
+        # --psm 7 = singola riga di testo
+        # whitelist = solo caratteri utili, evita simboli che confondono il parser
+        whitelist = "0123456789.,milonbtrqsegafdpzCPSBTFMkh "
+        config = f"--psm 7 -l eng -c tessedit_char_whitelist={whitelist} {config_str}".strip()
+
+        try:
+            text = pytesseract.image_to_string(img, config=config)
+            return text.strip()
+        except Exception as e:
+            log.debug(f"[OCR] Errore: {e}")
+            return ""
 
     # ── Parsing numeri ──────────────────────────────────────────────────────
 
@@ -276,21 +288,9 @@ class ScreenReader:
                 text = text.replace(suffix, "").strip()
                 break
 
-        # Normalizza il numero:
-        # Se c'è sia punto che virgola, il punto è migliaia e virgola è decimale
-        # Es: "55.430,12" -> 55430.12
-        if "." in text and "," in text:
-            text = text.replace(".", "").replace(",", ".")
-        elif "," in text:
-            # Solo virgola: è il decimale (es. "374,961" -> "374.961")
-            text = text.replace(",", ".")
-        elif "." in text:
-            # Solo punto: potrebbe essere migliaia (es. "55.430") o decimale
-            # Se ci sono esattamente 3 cifre dopo il punto -> migliaia
-            parts = text.split(".")
-            if len(parts) == 2 and len(parts[1]) == 3:
-                text = text.replace(".", "")
-            # Altrimenti lo lasciamo com'è (es. "5.1")
+        # Formato inglese: virgola = separatore migliaia, punto = decimale
+        # Es: "55,430,123" -> 55430123  |  "5.1" -> 5.1
+        text = text.replace(",", "")
 
         try:
             return float(re.sub(r"[^\d.]", "", text)) * multiplier
@@ -418,10 +418,8 @@ class ScreenReader:
     def _find_golden_cookie_by_color(self) -> tuple | None:
         """
         Fallback: cerca il Golden Cookie per colore (tono dorato).
-        Meno preciso del template matching ma non richiede il template.
-
-        Il Golden Cookie ha un colore giallo-arancio distintivo
-        in un'area normalmente marrone/blu.
+        Esclude la zona del cookie principale (pannello sinistro)
+        per evitare falsi positivi.
         """
         try:
             img_pil = self.screenshot("golden_area")
@@ -433,23 +431,35 @@ class ScreenReader:
             img_hsv = cv2.cvtColor(img_np, cv2.COLOR_RGB2HSV)
 
             # Range HSV per il giallo-dorato del Golden Cookie
-            lower_gold = np.array([15,  150, 150])
-            upper_gold = np.array([35,  255, 255])
+            lower_gold = np.array([18, 180, 180])
+            upper_gold = np.array([32, 255, 255])
 
-            mask    = cv2.inRange(img_hsv, lower_gold, upper_gold)
+            mask = cv2.inRange(img_hsv, lower_gold, upper_gold)
+
+            # Escludi la zona del cookie principale:
+            # nel pannello golden_area (x: 0-1160) il cookie principale
+            # occupa circa i primi 430px in larghezza e tutto in altezza.
+            # La escludiamo dalla maschera cosi non genera falsi positivi.
+            rect = self.window.rect
+            exclude_right = int(430 * rect.width / 1456)
+            mask[:, :exclude_right] = 0
+
             contours, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
-            # Filtra per dimensione: il golden cookie è abbastanza grande
-            min_area = 1000
+            # Il golden cookie deve essere sufficientemente grande
+            # ma molto piu' piccolo del cookie principale
+            min_area = 800
+            max_area = 15000
             for cnt in contours:
                 area = cv2.contourArea(cnt)
-                if area >= min_area:
+                if min_area <= area <= max_area:
                     M  = cv2.moments(cnt)
+                    if M["m00"] == 0:
+                        continue
                     cx = int(M["m10"] / M["m00"])
                     cy = int(M["m01"] / M["m00"])
 
                     region_l, region_t, _, _ = self._scale_region("golden_area")
-                    rect = self.window.rect
                     abs_x = rect.left + region_l + cx
                     abs_y = rect.top  + region_t + cy
 
