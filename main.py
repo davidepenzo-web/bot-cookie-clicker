@@ -33,13 +33,13 @@ log = logging.getLogger(__name__)
 # ── Costanti di configurazione ──────────────────────────────────────────────
 CONFIG = {
     # Quante volte al secondo cliccare il cookie principale
-    "cookie_cps": 20,
+    "cookie_cps": 40,
 
     # Ogni quanti secondi controllare se comprare strutture/upgrade
-    "buy_check_interval": 2.0,
+    "buy_check_interval": 1.0,
 
     # Ogni quanti secondi fare uno screenshot per cercare il Golden Cookie
-    "golden_cookie_scan_interval": 0.5,
+    "golden_cookie_scan_interval": 20,
 
     # Ogni quanti secondi aggiornare lo stato del gioco (leggere cookie, CPS)
     "state_update_interval": 5.0,
