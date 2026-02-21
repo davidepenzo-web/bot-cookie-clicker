@@ -316,61 +316,101 @@ class ScreenReader:
 
     def read_shop(self) -> list[dict]:
         """
-        Legge il pannello negozio e restituisce una lista di strutture con:
-          - name:       nome della struttura
-          - cost:       prezzo attuale (float)
-          - count:      quantità posseduta (int)
-          - affordable: True se abbiamo abbastanza cookie
-          - row_index:  indice della riga (0 = Cursore, 1 = Nonna, ...)
-          - click_pos:  coordinata assoluta per cliccarla (tuple x, y)
+        Legge il pannello negozio usando il colore dei pulsanti invece dell'OCR.
 
-        Nota: l'OCR sul negozio può essere impreciso per prezzi molto grandi.
-        In futuro si può migliorare con color detection (testo verde = acquistabile).
+        Strategia:
+          - Ogni riga struttura ha uno sfondo chiaro (acquistabile) o scuro (non acquistabile)
+          - Campionando il colore medio della riga possiamo capire se e' acquistabile
+          - Il prezzo viene stimato dalla strategia usando i valori base del gioco,
+            non letto dallo schermo (molto piu' affidabile dell'OCR)
+          - La posizione di click e' calcolata con coordinate fisse scalate
+
+        Colori osservati dallo screenshot:
+          - Riga acquistabile:     sfondo marrone chiaro/dorato  (R>130, G>100)
+          - Riga non acquistabile: sfondo marrone scuro/grigio   (R<100)
+          - Riga non ancora vista: completamente scura/grigia
         """
         buildings = []
 
-        rect  = self.window.rect
-        sx    = rect.width  / 1456
-        sy    = rect.height / 800
+        rect = self.window.rect
+        sx   = rect.width  / 1456
+        sy   = rect.height / 800
+
+        # Screenshot dell'intero negozio in una sola chiamata (piu' efficiente)
+        shop_left = int(SHOP_LEFT_X * sx)
+        try:
+            shop_img = ImageGrab.grab(bbox=(
+                rect.left + shop_left,
+                rect.top,
+                rect.right,
+                rect.bottom,
+            ))
+            shop_np = np.array(shop_img)
+        except Exception as e:
+            log.warning(f"[SHOP] Screenshot negozio fallito: {e}")
+            return []
+
+        shop_w = shop_np.shape[1]
 
         for i, name in enumerate(BUILDING_NAMES):
-            # Calcola la zona di questa riga nel negozio
             row_top    = int((BUILDING_START_Y + i * BUILDING_ROW_HEIGHT) * sy)
             row_bottom = int(row_top + BUILDING_ROW_HEIGHT * sy)
-            row_left   = int(SHOP_LEFT_X * sx)
 
-            # Crop della riga intera
-            bbox = (
-                rect.left + row_left,
-                rect.top  + row_top,
-                rect.right,
-                rect.top  + row_bottom,
+            # Posizione di click assoluta (centro della riga)
+            click_x = rect.left + shop_left + shop_w // 2
+            click_y = rect.top  + row_top   + int(BUILDING_ROW_HEIGHT * sy // 2)
+
+            # Estrai la riga dalla shop image
+            row_top_c    = max(0, row_top)
+            row_bottom_c = min(shop_np.shape[0], row_bottom)
+
+            if row_top_c >= row_bottom_c:
+                # Fuori dai bordi: struttura non ancora disponibile
+                buildings.append({
+                    "name":       name,
+                    "cost":       0,
+                    "count":      0,
+                    "affordable": False,
+                    "row_index":  i,
+                    "click_pos":  (click_x, click_y),
+                    "visible":    False,
+                })
+                continue
+
+            row_pixels = shop_np[row_top_c:row_bottom_c, :, :]
+
+            # Campiona solo la meta' sinistra della riga (icona + nome)
+            # per evitare il numero di quantita' sulla destra
+            half = row_pixels[:, : shop_w // 2, :]
+            mean_r = float(half[:, :, 0].mean())
+            mean_g = float(half[:, :, 1].mean())
+            mean_b = float(half[:, :, 2].mean())
+
+            # Determina se la riga e' visibile (struttura sbloccata)
+            # e se e' acquistabile (abbastanza luminosa/colorata)
+            brightness = (mean_r + mean_g + mean_b) / 3
+
+            # Riga completamente scura = struttura non ancora disponibile
+            visible    = brightness > 30
+
+            # Riga acquistabile: sfondo piu' chiaro e caldo (marrone dorato)
+            # Riga non acquistabile: sfondo piu' scuro e freddo (grigio-marrone)
+            # Soglia calibrata sullo screenshot fornito
+            affordable = visible and mean_r > 110 and mean_r > mean_b * 1.3
+
+            log.debug(
+                f"[SHOP] {name:<20} R={mean_r:.0f} G={mean_g:.0f} B={mean_b:.0f} "
+                f"bright={brightness:.0f} visible={visible} affordable={affordable}"
             )
-            img = ImageGrab.grab(bbox=bbox)
-
-            # OCR sulla riga
-            text = self._ocr(img)
-            log.debug(f"[OCR] shop row {i} '{name}' raw: '{text}'")
-
-            # Il prezzo è la prima cosa numerica che troviamo
-            cost = self.parse_number(text)
-
-            # Il numero posseduto è solitamente a destra (testo piccolo)
-            # Per ora lo estraiamo con regex semplice
-            count_match = re.search(r"\b(\d+)\s*$", text)
-            count = int(count_match.group(1)) if count_match else 0
-
-            # Posizione di click: centro della riga nel negozio
-            click_x = rect.left + row_left + int((rect.right - rect.left - row_left) // 2)
-            click_y = rect.top  + row_top  + int(BUILDING_ROW_HEIGHT * sy // 2)
 
             buildings.append({
                 "name":       name,
-                "cost":       cost,
-                "count":      count,
-                "affordable": False,   # verrà aggiornato da GameState
+                "cost":       0,      # stimato da Strategy usando BUILDING_BASE_CPS
+                "count":      0,      # non leggibile senza OCR affidabile
+                "affordable": affordable,
                 "row_index":  i,
                 "click_pos":  (click_x, click_y),
+                "visible":    visible,
             })
 
         return buildings

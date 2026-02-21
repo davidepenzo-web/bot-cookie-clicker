@@ -53,6 +53,47 @@ BUILDING_BASE_CPS = {
     "Frattale":         999_999_999_999_999_999_999.0,
 }
 
+# ── Costi base delle strutture (prezzi al primo acquisto, vanilla) ───────────
+# Usati come stima quando l'OCR non e' disponibile.
+# Fonte: Cookie Clicker wiki
+BUILDING_BASE_COST = {
+    "Cursor":             15,
+    "Grandma":           100,
+    "Farm":              1_100,
+    "Mine":             12_000,
+    "Factory":         130_000,
+    "Bank":          1_400_000,
+    "Temple":       20_000_000,
+    "Wizard tower":330_000_000,
+    "Shipment":   5_100_000_000,
+    "Alchemy lab":75_000_000_000,
+    "Portal":  1_000_000_000_000,
+    "Time machine": 14_000_000_000_000,
+    "Antimatter condenser": 170_000_000_000_000,
+    "Prism":    2_100_000_000_000_000,
+    "Chancemaker": 26_000_000_000_000_000,
+    "Fractal engine": 310_000_000_000_000_000,
+    "Javascript console": 71_000_000_000_000_000_000,
+    # Nomi italiani (fallback)
+    "Cursore":            15,
+    "Nonna":             100,
+    "Fattoria":        1_100,
+    "Miniera":        12_000,
+    "Fabbrica":      130_000,
+    "Banca":       1_400_000,
+    "Tempio":     20_000_000,
+    "Torre del mago": 330_000_000,
+    "Nave spaziale": 5_100_000_000,
+    "Alchimia":   75_000_000_000,
+    "Portale": 1_000_000_000_000,
+    "Macchina del tempo": 14_000_000_000_000,
+    "Antimateria": 170_000_000_000_000,
+    "Prisma":  2_100_000_000_000_000,
+    "Cervello": 26_000_000_000_000_000,
+    "Idiosfera": 310_000_000_000_000_000,
+    "Frattale": 71_000_000_000_000_000_000,
+}
+
 # Moltiplicatore CPS stimato per ogni struttura aggiuntiva della stessa tipologia
 # (la prima Nonna vale 0.5 CPS, la seconda 1.0, ecc. — scalatura lineare)
 # Nella realtà il gioco usa moltiplicatori da upgrade, ma questa è una buona stima.
@@ -144,33 +185,41 @@ class Strategy:
 
     def _best_building(self, game_state) -> dict | None:
         """
-        Calcola il payoff time per ogni struttura e restituisce
-        quella con il valore più basso.
+        Trova la struttura migliore da comprare.
 
-        Payoff time = costo / cps_aggiuntivo
+        Poiche' il costo non e' piu' letto dall'OCR (inaffidabile),
+        usiamo i prezzi base da BUILDING_BASE_CPS come stima e
+        diamo priorita' alle strutture che il gioco ha gia' marcato
+        come acquistabili (sfondo luminoso nel negozio).
 
-        Se nessuna struttura è acquistabile ora, restituisce comunque
-        la migliore (il buy_loop aspetterà che accumuliamo abbastanza cookie).
+        Tra le strutture acquistabili, scegliamo quella con il
+        payoff time piu' basso usando i prezzi stimati.
         """
+        # Strutture visibili e acquistabili secondo la color detection
+        affordable = [b for b in game_state.buildings if b.get("affordable")]
+        visible    = [b for b in game_state.buildings if b.get("visible", True)]
+
+        if not affordable and not visible:
+            return None
+
+        # Calcola payoff stimato per ogni struttura acquistabile
         candidates = []
+        pool = affordable if affordable else visible
 
-        for building in game_state.buildings:
-            cost = building.get("cost", 0)
-            name = building.get("name", "")
-
-            if cost <= 0:
-                continue
-
-            # CPS aggiuntivo stimato per questa struttura
+        for building in pool:
+            name     = building.get("name", "")
+            # Usa il costo base dal wiki come stima (o 0 se non noto)
+            est_cost = BUILDING_BASE_COST.get(name, 0)
             cps_gain = self._estimate_cps_gain(name, game_state)
+
             if cps_gain <= 0:
                 continue
 
-            payoff_time = cost / cps_gain   # in secondi
+            payoff_time = est_cost / cps_gain if est_cost > 0 else 9999
 
             candidates.append({
                 "name":        name,
-                "cost":        cost,
+                "cost":        est_cost,
                 "click_pos":   building.get("click_pos"),
                 "payoff_time": payoff_time,
                 "cps_gain":    cps_gain,
@@ -180,39 +229,32 @@ class Strategy:
 
             log.debug(
                 f"[STRATEGY] {name:<22} "
-                f"costo: {cost:>15,.0f}  "
+                f"costo_stimato: {est_cost:>15,.0f}  "
                 f"cps+: {cps_gain:>12,.1f}  "
                 f"payoff: {payoff_time/60:>8.1f} min"
             )
 
         if not candidates:
+            # Nessun candidato con dati utili: compra il primo acquistabile
+            if affordable:
+                b = affordable[0]
+                log.info(f"[STRATEGY] Fallback: primo acquistabile '{b['name']}'")
+                return {
+                    "name":        b["name"],
+                    "cost":        0,
+                    "click_pos":   b.get("click_pos"),
+                    "payoff_time": 9999,
+                    "is_upgrade":  False,
+                }
             return None
 
-        # Ordina per payoff time (il più basso prima)
         candidates.sort(key=lambda c: c["payoff_time"])
-
         best = candidates[0]
         log.info(
             f"[STRATEGY] Miglior acquisto: '{best['name']}' "
-            f"(payoff {best['payoff_time']/60:.1f} min, "
+            f"(payoff stimato {best['payoff_time']/60:.1f} min, "
             f"acquistabile: {best['affordable']})"
         )
-
-        # Se il migliore non è acquistabile, aspettiamo —
-        # ma se c'è qualcosa di acquistabile con payoff simile, prendiamo quello
-        if not best["affordable"]:
-            affordable_candidates = [c for c in candidates if c["affordable"]]
-            if affordable_candidates:
-                # Prendi il migliore tra quelli acquistabili
-                affordable_best = affordable_candidates[0]
-                # Se il suo payoff è meno del doppio del migliore assoluto, preferiscilo
-                if affordable_best["payoff_time"] < best["payoff_time"] * 2:
-                    log.info(
-                        f"[STRATEGY] Ripiego su acquistabile: '{affordable_best['name']}' "
-                        f"(payoff {affordable_best['payoff_time']/60:.1f} min)"
-                    )
-                    return affordable_best
-
         return best
 
     def _cheapest_affordable(self, game_state) -> dict | None:
