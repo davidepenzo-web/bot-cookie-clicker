@@ -163,7 +163,7 @@ class ScreenReader:
 
     # ── Screenshot ──────────────────────────────────────────────────────────
 
-    def screenshot(self, region_name: str = None) -> Image.Image:
+    def screenshot(self, region_name: str | None = None) -> Image.Image:
         """
         Cattura uno screenshot dell'intera finestra o di una regione specifica.
 
