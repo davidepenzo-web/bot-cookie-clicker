@@ -1,0 +1,1282 @@
+2026-02-21 20:59:24,531 [INFO] ==================================================
+2026-02-21 20:59:24,536 [INFO] ==================================================
+2026-02-21 20:59:25,334 [INFO] [INIT] Cerco la finestra di Cookie Clicker su Steam...
+2026-02-21 20:59:25,637 [INFO] [WINDOW] Finestra trovata: WindowRect(left=-1361, top=-11, width=1373, height=2363)
+2026-02-21 20:59:25,637 [INFO] [INIT] Finestra trovata: WindowRect(left=-1361, top=-11, width=1373, height=2363)
+2026-02-21 20:59:25,637 [WARNING] [SCREEN] 'golden_cookie_template.png' non trovato. Golden Cookie detection disabilitata finché non lo crei. Vedi docstring _load_golden_template() per le istruzioni.
+2026-02-21 20:59:25,638 [INFO] [INIT] Prima lettura dello stato del gioco...
+2026-02-21 20:59:25,731 [ERROR] [STATE] Errore durante update(): tesseract is not installed or it's not in your PATH. See README file for more information.
+Traceback (most recent call last):
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 275, in run_tesseract
+    proc = subprocess.Popen(cmd_args, **subprocess_args())
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\subprocess.py", line 1038, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\subprocess.py", line 1552, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] Impossibile trovare il file specificato
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\game_state.py", line 70, in update
+    self._update_cookies()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\game_state.py", line 88, in _update_cookies
+    val = self.screen_reader.read_cookie_count()
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\screen_reader.py", line 304, in read_cookie_count
+    text = self._ocr(img)
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\screen_reader.py", line 237, in _ocr
+    text = pytesseract.image_to_string(
+        img,
+        config=f"--psm 7 {config_str}".strip()
+    )
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 486, in image_to_string
+    return {
+           ~
+    ...<2 lines>...
+        Output.STRING: lambda: run_and_get_output(*args),
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    }[output_type]()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 489, in <lambda>
+    Output.STRING: lambda: run_and_get_output(*args),
+                           ~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 352, in run_and_get_output
+    run_tesseract(**kwargs)
+    ~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 280, in run_tesseract
+    raise TesseractNotFoundError()
+pytesseract.pytesseract.TesseractNotFoundError: tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-02-21 20:59:25,739 [INFO] [INIT] Stato iniziale: GameState(cookies=0, cps=0.0, buildings=0, upgrades=0)
+2026-02-21 20:59:25,740 [INFO] [CLICKER] Avviato — 20 click/sec
+2026-02-21 20:59:25,740 [INFO] [THREAD] 'CookieClicker' avviato.
+2026-02-21 20:59:25,741 [INFO] [GOLDEN] Scanner avviato — ogni 0.5s
+2026-02-21 20:59:25,741 [INFO] [THREAD] 'GoldenCookie' avviato.
+2026-02-21 20:59:25,814 [INFO] [BUY] Loop acquisti avviato — ogni 2.0s
+2026-02-21 20:59:25,814 [INFO] [THREAD] 'BuyLoop' avviato.
+2026-02-21 20:59:25,917 [INFO] 
+2026-02-21 20:59:25,968 [ERROR] [STATE] Errore durante update(): tesseract is not installed or it's not in your PATH. See README file for more information.
+Traceback (most recent call last):
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 275, in run_tesseract
+    proc = subprocess.Popen(cmd_args, **subprocess_args())
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\subprocess.py", line 1038, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\subprocess.py", line 1552, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] Impossibile trovare il file specificato
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\game_state.py", line 70, in update
+    self._update_cookies()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\game_state.py", line 88, in _update_cookies
+    val = self.screen_reader.read_cookie_count()
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\screen_reader.py", line 304, in read_cookie_count
+    text = self._ocr(img)
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\screen_reader.py", line 237, in _ocr
+    text = pytesseract.image_to_string(
+        img,
+        config=f"--psm 7 {config_str}".strip()
+    )
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 486, in image_to_string
+    return {
+           ~
+    ...<2 lines>...
+        Output.STRING: lambda: run_and_get_output(*args),
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    }[output_type]()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 489, in <lambda>
+    Output.STRING: lambda: run_and_get_output(*args),
+                           ~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 352, in run_and_get_output
+    run_tesseract(**kwargs)
+    ~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 280, in run_tesseract
+    raise TesseractNotFoundError()
+pytesseract.pytesseract.TesseractNotFoundError: tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-02-21 20:59:26,102 [INFO] 
+2026-02-21 20:59:28,155 [ERROR] [STATE] Errore durante update(): tesseract is not installed or it's not in your PATH. See README file for more information.
+Traceback (most recent call last):
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 275, in run_tesseract
+    proc = subprocess.Popen(cmd_args, **subprocess_args())
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\subprocess.py", line 1038, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\subprocess.py", line 1552, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] Impossibile trovare il file specificato
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\game_state.py", line 70, in update
+    self._update_cookies()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\game_state.py", line 88, in _update_cookies
+    val = self.screen_reader.read_cookie_count()
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\screen_reader.py", line 304, in read_cookie_count
+    text = self._ocr(img)
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\screen_reader.py", line 237, in _ocr
+    text = pytesseract.image_to_string(
+        img,
+        config=f"--psm 7 {config_str}".strip()
+    )
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 486, in image_to_string
+    return {
+           ~
+    ...<2 lines>...
+        Output.STRING: lambda: run_and_get_output(*args),
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    }[output_type]()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 489, in <lambda>
+    Output.STRING: lambda: run_and_get_output(*args),
+                           ~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 352, in run_and_get_output
+    run_tesseract(**kwargs)
+    ~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 280, in run_tesseract
+    raise TesseractNotFoundError()
+pytesseract.pytesseract.TesseractNotFoundError: tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-02-21 20:59:30,276 [ERROR] [STATE] Errore durante update(): tesseract is not installed or it's not in your PATH. See README file for more information.
+Traceback (most recent call last):
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 275, in run_tesseract
+    proc = subprocess.Popen(cmd_args, **subprocess_args())
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\subprocess.py", line 1038, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\subprocess.py", line 1552, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] Impossibile trovare il file specificato
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\game_state.py", line 70, in update
+    self._update_cookies()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\game_state.py", line 88, in _update_cookies
+    val = self.screen_reader.read_cookie_count()
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\screen_reader.py", line 304, in read_cookie_count
+    text = self._ocr(img)
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\screen_reader.py", line 237, in _ocr
+    text = pytesseract.image_to_string(
+        img,
+        config=f"--psm 7 {config_str}".strip()
+    )
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 486, in image_to_string
+    return {
+           ~
+    ...<2 lines>...
+        Output.STRING: lambda: run_and_get_output(*args),
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    }[output_type]()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 489, in <lambda>
+    Output.STRING: lambda: run_and_get_output(*args),
+                           ~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 352, in run_and_get_output
+    run_tesseract(**kwargs)
+    ~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 280, in run_tesseract
+    raise TesseractNotFoundError()
+pytesseract.pytesseract.TesseractNotFoundError: tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-02-21 20:59:32,391 [ERROR] [STATE] Errore durante update(): tesseract is not installed or it's not in your PATH. See README file for more information.
+Traceback (most recent call last):
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 275, in run_tesseract
+    proc = subprocess.Popen(cmd_args, **subprocess_args())
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\subprocess.py", line 1038, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\subprocess.py", line 1552, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] Impossibile trovare il file specificato
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\game_state.py", line 70, in update
+    self._update_cookies()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\game_state.py", line 88, in _update_cookies
+    val = self.screen_reader.read_cookie_count()
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\screen_reader.py", line 304, in read_cookie_count
+    text = self._ocr(img)
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\screen_reader.py", line 237, in _ocr
+    text = pytesseract.image_to_string(
+        img,
+        config=f"--psm 7 {config_str}".strip()
+    )
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 486, in image_to_string
+    return {
+           ~
+    ...<2 lines>...
+        Output.STRING: lambda: run_and_get_output(*args),
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    }[output_type]()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 489, in <lambda>
+    Output.STRING: lambda: run_and_get_output(*args),
+                           ~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 352, in run_and_get_output
+    run_tesseract(**kwargs)
+    ~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 280, in run_tesseract
+    raise TesseractNotFoundError()
+pytesseract.pytesseract.TesseractNotFoundError: tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-02-21 20:59:34,578 [ERROR] [STATE] Errore durante update(): tesseract is not installed or it's not in your PATH. See README file for more information.
+Traceback (most recent call last):
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 275, in run_tesseract
+    proc = subprocess.Popen(cmd_args, **subprocess_args())
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\subprocess.py", line 1038, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\subprocess.py", line 1552, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] Impossibile trovare il file specificato
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\game_state.py", line 70, in update
+    self._update_cookies()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\game_state.py", line 88, in _update_cookies
+    val = self.screen_reader.read_cookie_count()
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\screen_reader.py", line 304, in read_cookie_count
+    text = self._ocr(img)
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\screen_reader.py", line 237, in _ocr
+    text = pytesseract.image_to_string(
+        img,
+        config=f"--psm 7 {config_str}".strip()
+    )
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 486, in image_to_string
+    return {
+           ~
+    ...<2 lines>...
+        Output.STRING: lambda: run_and_get_output(*args),
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    }[output_type]()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 489, in <lambda>
+    Output.STRING: lambda: run_and_get_output(*args),
+                           ~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 352, in run_and_get_output
+    run_tesseract(**kwargs)
+    ~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 280, in run_tesseract
+    raise TesseractNotFoundError()
+pytesseract.pytesseract.TesseractNotFoundError: tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-02-21 20:59:36,699 [ERROR] [STATE] Errore durante update(): screen grab failed
+Traceback (most recent call last):
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\game_state.py", line 70, in update
+    self._update_cookies()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\game_state.py", line 88, in _update_cookies
+    val = self.screen_reader.read_cookie_count()
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\screen_reader.py", line 303, in read_cookie_count
+    img  = self.screenshot("cookie_count")
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\screen_reader.py", line 191, in screenshot
+    img = ImageGrab.grab(bbox=bbox)
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\PIL\ImageGrab.py", line 89, in grab
+    offset, size, data = Image.core.grabscreen_win32(
+                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        include_layered_windows,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+        all_screens,
+        ^^^^^^^^^^^^
+        int(window) if window is not None else 0,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+OSError: screen grab failed
+2026-02-21 20:59:38,804 [ERROR] [STATE] Errore durante update(): tesseract is not installed or it's not in your PATH. See README file for more information.
+Traceback (most recent call last):
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 275, in run_tesseract
+    proc = subprocess.Popen(cmd_args, **subprocess_args())
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\subprocess.py", line 1038, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\subprocess.py", line 1552, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] Impossibile trovare il file specificato
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\game_state.py", line 70, in update
+    self._update_cookies()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\game_state.py", line 88, in _update_cookies
+    val = self.screen_reader.read_cookie_count()
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\screen_reader.py", line 304, in read_cookie_count
+    text = self._ocr(img)
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\screen_reader.py", line 237, in _ocr
+    text = pytesseract.image_to_string(
+        img,
+        config=f"--psm 7 {config_str}".strip()
+    )
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 486, in image_to_string
+    return {
+           ~
+    ...<2 lines>...
+        Output.STRING: lambda: run_and_get_output(*args),
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    }[output_type]()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 489, in <lambda>
+    Output.STRING: lambda: run_and_get_output(*args),
+                           ~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 352, in run_and_get_output
+    run_tesseract(**kwargs)
+    ~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 280, in run_tesseract
+    raise TesseractNotFoundError()
+pytesseract.pytesseract.TesseractNotFoundError: tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-02-21 20:59:40,834 [ERROR] [STATE] Errore durante update(): screen grab failed
+Traceback (most recent call last):
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\game_state.py", line 70, in update
+    self._update_cookies()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\game_state.py", line 88, in _update_cookies
+    val = self.screen_reader.read_cookie_count()
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\screen_reader.py", line 303, in read_cookie_count
+    img  = self.screenshot("cookie_count")
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\screen_reader.py", line 191, in screenshot
+    img = ImageGrab.grab(bbox=bbox)
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\PIL\ImageGrab.py", line 89, in grab
+    offset, size, data = Image.core.grabscreen_win32(
+                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        include_layered_windows,
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+        all_screens,
+        ^^^^^^^^^^^^
+        int(window) if window is not None else 0,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+OSError: screen grab failed
+2026-02-21 20:59:43,050 [ERROR] [STATE] Errore durante update(): tesseract is not installed or it's not in your PATH. See README file for more information.
+Traceback (most recent call last):
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 275, in run_tesseract
+    proc = subprocess.Popen(cmd_args, **subprocess_args())
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\subprocess.py", line 1038, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\subprocess.py", line 1552, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] Impossibile trovare il file specificato
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\game_state.py", line 70, in update
+    self._update_cookies()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\game_state.py", line 88, in _update_cookies
+    val = self.screen_reader.read_cookie_count()
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\screen_reader.py", line 304, in read_cookie_count
+    text = self._ocr(img)
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\screen_reader.py", line 237, in _ocr
+    text = pytesseract.image_to_string(
+        img,
+        config=f"--psm 7 {config_str}".strip()
+    )
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 486, in image_to_string
+    return {
+           ~
+    ...<2 lines>...
+        Output.STRING: lambda: run_and_get_output(*args),
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    }[output_type]()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 489, in <lambda>
+    Output.STRING: lambda: run_and_get_output(*args),
+                           ~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 352, in run_and_get_output
+    run_tesseract(**kwargs)
+    ~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 280, in run_tesseract
+    raise TesseractNotFoundError()
+pytesseract.pytesseract.TesseractNotFoundError: tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-02-21 20:59:45,159 [ERROR] [STATE] Errore durante update(): tesseract is not installed or it's not in your PATH. See README file for more information.
+Traceback (most recent call last):
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 275, in run_tesseract
+    proc = subprocess.Popen(cmd_args, **subprocess_args())
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\subprocess.py", line 1038, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\subprocess.py", line 1552, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] Impossibile trovare il file specificato
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\game_state.py", line 70, in update
+    self._update_cookies()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\game_state.py", line 88, in _update_cookies
+    val = self.screen_reader.read_cookie_count()
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\screen_reader.py", line 304, in read_cookie_count
+    text = self._ocr(img)
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\screen_reader.py", line 237, in _ocr
+    text = pytesseract.image_to_string(
+        img,
+        config=f"--psm 7 {config_str}".strip()
+    )
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 486, in image_to_string
+    return {
+           ~
+    ...<2 lines>...
+        Output.STRING: lambda: run_and_get_output(*args),
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    }[output_type]()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 489, in <lambda>
+    Output.STRING: lambda: run_and_get_output(*args),
+                           ~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 352, in run_and_get_output
+    run_tesseract(**kwargs)
+    ~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 280, in run_tesseract
+    raise TesseractNotFoundError()
+pytesseract.pytesseract.TesseractNotFoundError: tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-02-21 20:59:47,290 [ERROR] [STATE] Errore durante update(): tesseract is not installed or it's not in your PATH. See README file for more information.
+Traceback (most recent call last):
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 275, in run_tesseract
+    proc = subprocess.Popen(cmd_args, **subprocess_args())
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\subprocess.py", line 1038, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\subprocess.py", line 1552, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] Impossibile trovare il file specificato
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\game_state.py", line 70, in update
+    self._update_cookies()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\game_state.py", line 88, in _update_cookies
+    val = self.screen_reader.read_cookie_count()
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\screen_reader.py", line 304, in read_cookie_count
+    text = self._ocr(img)
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\screen_reader.py", line 237, in _ocr
+    text = pytesseract.image_to_string(
+        img,
+        config=f"--psm 7 {config_str}".strip()
+    )
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 486, in image_to_string
+    return {
+           ~
+    ...<2 lines>...
+        Output.STRING: lambda: run_and_get_output(*args),
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    }[output_type]()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 489, in <lambda>
+    Output.STRING: lambda: run_and_get_output(*args),
+                           ~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 352, in run_and_get_output
+    run_tesseract(**kwargs)
+    ~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 280, in run_tesseract
+    raise TesseractNotFoundError()
+pytesseract.pytesseract.TesseractNotFoundError: tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-02-21 20:59:49,507 [ERROR] [STATE] Errore durante update(): tesseract is not installed or it's not in your PATH. See README file for more information.
+Traceback (most recent call last):
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 275, in run_tesseract
+    proc = subprocess.Popen(cmd_args, **subprocess_args())
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\subprocess.py", line 1038, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\subprocess.py", line 1552, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] Impossibile trovare il file specificato
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\game_state.py", line 70, in update
+    self._update_cookies()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\game_state.py", line 88, in _update_cookies
+    val = self.screen_reader.read_cookie_count()
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\screen_reader.py", line 304, in read_cookie_count
+    text = self._ocr(img)
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\screen_reader.py", line 237, in _ocr
+    text = pytesseract.image_to_string(
+        img,
+        config=f"--psm 7 {config_str}".strip()
+    )
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 486, in image_to_string
+    return {
+           ~
+    ...<2 lines>...
+        Output.STRING: lambda: run_and_get_output(*args),
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    }[output_type]()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 489, in <lambda>
+    Output.STRING: lambda: run_and_get_output(*args),
+                           ~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 352, in run_and_get_output
+    run_tesseract(**kwargs)
+    ~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 280, in run_tesseract
+    raise TesseractNotFoundError()
+pytesseract.pytesseract.TesseractNotFoundError: tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-02-21 20:59:51,576 [ERROR] [STATE] Errore durante update(): tesseract is not installed or it's not in your PATH. See README file for more information.
+Traceback (most recent call last):
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 275, in run_tesseract
+    proc = subprocess.Popen(cmd_args, **subprocess_args())
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\subprocess.py", line 1038, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\subprocess.py", line 1552, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] Impossibile trovare il file specificato
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\game_state.py", line 70, in update
+    self._update_cookies()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\game_state.py", line 88, in _update_cookies
+    val = self.screen_reader.read_cookie_count()
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\screen_reader.py", line 304, in read_cookie_count
+    text = self._ocr(img)
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\screen_reader.py", line 237, in _ocr
+    text = pytesseract.image_to_string(
+        img,
+        config=f"--psm 7 {config_str}".strip()
+    )
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 486, in image_to_string
+    return {
+           ~
+    ...<2 lines>...
+        Output.STRING: lambda: run_and_get_output(*args),
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    }[output_type]()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 489, in <lambda>
+    Output.STRING: lambda: run_and_get_output(*args),
+                           ~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 352, in run_and_get_output
+    run_tesseract(**kwargs)
+    ~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 280, in run_tesseract
+    raise TesseractNotFoundError()
+pytesseract.pytesseract.TesseractNotFoundError: tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-02-21 20:59:53,657 [ERROR] [STATE] Errore durante update(): tesseract is not installed or it's not in your PATH. See README file for more information.
+Traceback (most recent call last):
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 275, in run_tesseract
+    proc = subprocess.Popen(cmd_args, **subprocess_args())
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\subprocess.py", line 1038, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\subprocess.py", line 1552, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] Impossibile trovare il file specificato
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\game_state.py", line 70, in update
+    self._update_cookies()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\game_state.py", line 88, in _update_cookies
+    val = self.screen_reader.read_cookie_count()
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\screen_reader.py", line 304, in read_cookie_count
+    text = self._ocr(img)
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\screen_reader.py", line 237, in _ocr
+    text = pytesseract.image_to_string(
+        img,
+        config=f"--psm 7 {config_str}".strip()
+    )
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 486, in image_to_string
+    return {
+           ~
+    ...<2 lines>...
+        Output.STRING: lambda: run_and_get_output(*args),
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    }[output_type]()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 489, in <lambda>
+    Output.STRING: lambda: run_and_get_output(*args),
+                           ~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 352, in run_and_get_output
+    run_tesseract(**kwargs)
+    ~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 280, in run_tesseract
+    raise TesseractNotFoundError()
+pytesseract.pytesseract.TesseractNotFoundError: tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-02-21 20:59:55,793 [ERROR] [STATE] Errore durante update(): tesseract is not installed or it's not in your PATH. See README file for more information.
+Traceback (most recent call last):
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 275, in run_tesseract
+    proc = subprocess.Popen(cmd_args, **subprocess_args())
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\subprocess.py", line 1038, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\subprocess.py", line 1552, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] Impossibile trovare il file specificato
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\game_state.py", line 70, in update
+    self._update_cookies()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\game_state.py", line 88, in _update_cookies
+    val = self.screen_reader.read_cookie_count()
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\screen_reader.py", line 304, in read_cookie_count
+    text = self._ocr(img)
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\screen_reader.py", line 237, in _ocr
+    text = pytesseract.image_to_string(
+        img,
+        config=f"--psm 7 {config_str}".strip()
+    )
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 486, in image_to_string
+    return {
+           ~
+    ...<2 lines>...
+        Output.STRING: lambda: run_and_get_output(*args),
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    }[output_type]()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 489, in <lambda>
+    Output.STRING: lambda: run_and_get_output(*args),
+                           ~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 352, in run_and_get_output
+    run_tesseract(**kwargs)
+    ~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 280, in run_tesseract
+    raise TesseractNotFoundError()
+pytesseract.pytesseract.TesseractNotFoundError: tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-02-21 20:59:57,858 [ERROR] [STATE] Errore durante update(): tesseract is not installed or it's not in your PATH. See README file for more information.
+Traceback (most recent call last):
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 275, in run_tesseract
+    proc = subprocess.Popen(cmd_args, **subprocess_args())
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\subprocess.py", line 1038, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\subprocess.py", line 1552, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] Impossibile trovare il file specificato
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\game_state.py", line 70, in update
+    self._update_cookies()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\game_state.py", line 88, in _update_cookies
+    val = self.screen_reader.read_cookie_count()
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\screen_reader.py", line 304, in read_cookie_count
+    text = self._ocr(img)
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\screen_reader.py", line 237, in _ocr
+    text = pytesseract.image_to_string(
+        img,
+        config=f"--psm 7 {config_str}".strip()
+    )
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 486, in image_to_string
+    return {
+           ~
+    ...<2 lines>...
+        Output.STRING: lambda: run_and_get_output(*args),
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    }[output_type]()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 489, in <lambda>
+    Output.STRING: lambda: run_and_get_output(*args),
+                           ~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 352, in run_and_get_output
+    run_tesseract(**kwargs)
+    ~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 280, in run_tesseract
+    raise TesseractNotFoundError()
+pytesseract.pytesseract.TesseractNotFoundError: tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-02-21 20:59:59,965 [ERROR] [STATE] Errore durante update(): tesseract is not installed or it's not in your PATH. See README file for more information.
+Traceback (most recent call last):
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 275, in run_tesseract
+    proc = subprocess.Popen(cmd_args, **subprocess_args())
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\subprocess.py", line 1038, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\subprocess.py", line 1552, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] Impossibile trovare il file specificato
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\game_state.py", line 70, in update
+    self._update_cookies()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\game_state.py", line 88, in _update_cookies
+    val = self.screen_reader.read_cookie_count()
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\screen_reader.py", line 304, in read_cookie_count
+    text = self._ocr(img)
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\screen_reader.py", line 237, in _ocr
+    text = pytesseract.image_to_string(
+        img,
+        config=f"--psm 7 {config_str}".strip()
+    )
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 486, in image_to_string
+    return {
+           ~
+    ...<2 lines>...
+        Output.STRING: lambda: run_and_get_output(*args),
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    }[output_type]()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 489, in <lambda>
+    Output.STRING: lambda: run_and_get_output(*args),
+                           ~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 352, in run_and_get_output
+    run_tesseract(**kwargs)
+    ~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 280, in run_tesseract
+    raise TesseractNotFoundError()
+pytesseract.pytesseract.TesseractNotFoundError: tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-02-21 21:00:02,026 [ERROR] [STATE] Errore durante update(): tesseract is not installed or it's not in your PATH. See README file for more information.
+Traceback (most recent call last):
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 275, in run_tesseract
+    proc = subprocess.Popen(cmd_args, **subprocess_args())
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\subprocess.py", line 1038, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\subprocess.py", line 1552, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] Impossibile trovare il file specificato
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\game_state.py", line 70, in update
+    self._update_cookies()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\game_state.py", line 88, in _update_cookies
+    val = self.screen_reader.read_cookie_count()
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\screen_reader.py", line 304, in read_cookie_count
+    text = self._ocr(img)
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\screen_reader.py", line 237, in _ocr
+    text = pytesseract.image_to_string(
+        img,
+        config=f"--psm 7 {config_str}".strip()
+    )
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 486, in image_to_string
+    return {
+           ~
+    ...<2 lines>...
+        Output.STRING: lambda: run_and_get_output(*args),
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    }[output_type]()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 489, in <lambda>
+    Output.STRING: lambda: run_and_get_output(*args),
+                           ~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 352, in run_and_get_output
+    run_tesseract(**kwargs)
+    ~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 280, in run_tesseract
+    raise TesseractNotFoundError()
+pytesseract.pytesseract.TesseractNotFoundError: tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-02-21 21:00:04,164 [ERROR] [STATE] Errore durante update(): tesseract is not installed or it's not in your PATH. See README file for more information.
+Traceback (most recent call last):
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 275, in run_tesseract
+    proc = subprocess.Popen(cmd_args, **subprocess_args())
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\subprocess.py", line 1038, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\subprocess.py", line 1552, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] Impossibile trovare il file specificato
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\game_state.py", line 70, in update
+    self._update_cookies()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\game_state.py", line 88, in _update_cookies
+    val = self.screen_reader.read_cookie_count()
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\screen_reader.py", line 304, in read_cookie_count
+    text = self._ocr(img)
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\screen_reader.py", line 237, in _ocr
+    text = pytesseract.image_to_string(
+        img,
+        config=f"--psm 7 {config_str}".strip()
+    )
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 486, in image_to_string
+    return {
+           ~
+    ...<2 lines>...
+        Output.STRING: lambda: run_and_get_output(*args),
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    }[output_type]()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 489, in <lambda>
+    Output.STRING: lambda: run_and_get_output(*args),
+                           ~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 352, in run_and_get_output
+    run_tesseract(**kwargs)
+    ~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 280, in run_tesseract
+    raise TesseractNotFoundError()
+pytesseract.pytesseract.TesseractNotFoundError: tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-02-21 21:00:06,272 [ERROR] [STATE] Errore durante update(): tesseract is not installed or it's not in your PATH. See README file for more information.
+Traceback (most recent call last):
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 275, in run_tesseract
+    proc = subprocess.Popen(cmd_args, **subprocess_args())
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\subprocess.py", line 1038, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\subprocess.py", line 1552, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] Impossibile trovare il file specificato
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\game_state.py", line 70, in update
+    self._update_cookies()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\game_state.py", line 88, in _update_cookies
+    val = self.screen_reader.read_cookie_count()
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\screen_reader.py", line 304, in read_cookie_count
+    text = self._ocr(img)
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\screen_reader.py", line 237, in _ocr
+    text = pytesseract.image_to_string(
+        img,
+        config=f"--psm 7 {config_str}".strip()
+    )
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 486, in image_to_string
+    return {
+           ~
+    ...<2 lines>...
+        Output.STRING: lambda: run_and_get_output(*args),
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    }[output_type]()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 489, in <lambda>
+    Output.STRING: lambda: run_and_get_output(*args),
+                           ~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 352, in run_and_get_output
+    run_tesseract(**kwargs)
+    ~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 280, in run_tesseract
+    raise TesseractNotFoundError()
+pytesseract.pytesseract.TesseractNotFoundError: tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-02-21 21:00:08,431 [ERROR] [STATE] Errore durante update(): tesseract is not installed or it's not in your PATH. See README file for more information.
+Traceback (most recent call last):
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 275, in run_tesseract
+    proc = subprocess.Popen(cmd_args, **subprocess_args())
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\subprocess.py", line 1038, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\subprocess.py", line 1552, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] Impossibile trovare il file specificato
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\game_state.py", line 70, in update
+    self._update_cookies()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\game_state.py", line 88, in _update_cookies
+    val = self.screen_reader.read_cookie_count()
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\screen_reader.py", line 304, in read_cookie_count
+    text = self._ocr(img)
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\screen_reader.py", line 237, in _ocr
+    text = pytesseract.image_to_string(
+        img,
+        config=f"--psm 7 {config_str}".strip()
+    )
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 486, in image_to_string
+    return {
+           ~
+    ...<2 lines>...
+        Output.STRING: lambda: run_and_get_output(*args),
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    }[output_type]()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 489, in <lambda>
+    Output.STRING: lambda: run_and_get_output(*args),
+                           ~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 352, in run_and_get_output
+    run_tesseract(**kwargs)
+    ~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 280, in run_tesseract
+    raise TesseractNotFoundError()
+pytesseract.pytesseract.TesseractNotFoundError: tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-02-21 21:00:10,522 [ERROR] [STATE] Errore durante update(): tesseract is not installed or it's not in your PATH. See README file for more information.
+Traceback (most recent call last):
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 275, in run_tesseract
+    proc = subprocess.Popen(cmd_args, **subprocess_args())
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\subprocess.py", line 1038, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\subprocess.py", line 1552, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] Impossibile trovare il file specificato
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\game_state.py", line 70, in update
+    self._update_cookies()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\game_state.py", line 88, in _update_cookies
+    val = self.screen_reader.read_cookie_count()
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\screen_reader.py", line 304, in read_cookie_count
+    text = self._ocr(img)
+  File "C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\screen_reader.py", line 237, in _ocr
+    text = pytesseract.image_to_string(
+        img,
+        config=f"--psm 7 {config_str}".strip()
+    )
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 486, in image_to_string
+    return {
+           ~
+    ...<2 lines>...
+        Output.STRING: lambda: run_and_get_output(*args),
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    }[output_type]()
+    ~~~~~~~~~~~~~~^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 489, in <lambda>
+    Output.STRING: lambda: run_and_get_output(*args),
+                           ~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 352, in run_and_get_output
+    run_tesseract(**kwargs)
+    ~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Laptop\AppData\Local\Programs\Python\Python314\Lib\site-packages\pytesseract\pytesseract.py", line 280, in run_tesseract
+    raise TesseractNotFoundError()
+pytesseract.pytesseract.TesseractNotFoundError: tesseract is not installed or it's not in your PATH. See README file for more information.
+2026-02-21 21:00:11,204 [INFO] 
+2026-02-21 21:00:11,205 [INFO] [STOP] CTRL+C ricevuto — arresto del bot...

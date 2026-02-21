@@ -48,6 +48,8 @@ except ImportError:
 # ── Tentativo import pytesseract (opzionale) ────────────────────────────────
 try:
     import pytesseract as pytesseract
+    # Percorso Tesseract su Windows — modifica se l'hai installato altrove
+    pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
     TESSERACT_AVAILABLE = True
 except ImportError:
     pytesseract = None  # type: ignore
