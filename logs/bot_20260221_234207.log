@@ -1,0 +1,31 @@
+2026-02-21 23:42:07,448 [INFO] ==================================================
+2026-02-21 23:42:07,452 [INFO]   🍪 Cookie Clicker Bot — Avvio
+2026-02-21 23:42:07,453 [INFO] ==================================================
+2026-02-21 23:42:09,626 [INFO] [INIT] Cerco la finestra di Cookie Clicker su Steam...
+2026-02-21 23:42:09,935 [INFO] [WINDOW] Finestra trovata: WindowRect(left=-9, top=-9, width=1938, height=1038)
+2026-02-21 23:42:09,936 [INFO] [INIT] Finestra trovata: WindowRect(left=-9, top=-9, width=1938, height=1038)
+2026-02-21 23:42:09,946 [INFO] [SCREEN] Template Golden Cookie caricato: C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\golden_cookie_template.png
+2026-02-21 23:42:15,036 [INFO] [INIT] Prima lettura dello stato del gioco...
+2026-02-21 23:42:16,908 [INFO] [INIT] Stato iniziale: GameState(cookies=0, cps=0.0, buildings=0, upgrades=8)
+2026-02-21 23:42:16,909 [INFO] [CLICKER] Avviato — 20 click/sec
+2026-02-21 23:42:16,909 [INFO] [THREAD] 'CookieClicker' avviato.
+2026-02-21 23:42:16,911 [INFO] [GOLDEN] Scanner avviato — ogni 0.5s
+2026-02-21 23:42:16,912 [INFO] [THREAD] 'GoldenCookie' avviato.
+2026-02-21 23:42:16,962 [INFO] [BUY] Loop acquisti avviato — ogni 2.0s
+2026-02-21 23:42:16,962 [INFO] [THREAD] 'BuyLoop' avviato.
+2026-02-21 23:42:17,037 [INFO] 
+2026-02-21 23:42:17,045 [INFO] ✅ Bot attivo! Premi CTRL+C per fermarlo.
+2026-02-21 23:42:17,049 [INFO] 
+2026-02-21 23:42:18,655 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-21 23:42:22,159 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-21 23:42:25,719 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-21 23:42:29,017 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-21 23:42:32,378 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-21 23:42:35,771 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-21 23:42:39,537 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-21 23:42:42,847 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-21 23:42:46,582 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-21 23:42:47,065 [INFO] [STATS] 🍪 Cookie: 0 | CPS: 0.0 | Strutture: 0
+2026-02-21 23:42:50,020 [INFO] 
+2026-02-21 23:42:50,023 [INFO] [STOP] CTRL+C ricevuto — arresto del bot...
+2026-02-21 23:42:52,696 [INFO] [STOP] Bot fermato. Arrivederci!
