@@ -1,0 +1,22 @@
+2026-02-22 11:44:52,954 [INFO] ==================================================
+2026-02-22 11:44:52,956 [INFO]   🍪 Cookie Clicker Bot — Avvio
+2026-02-22 11:44:52,956 [INFO] ==================================================
+2026-02-22 11:44:55,840 [INFO] [INIT] Cerco la finestra di Cookie Clicker su Steam...
+2026-02-22 11:44:56,152 [INFO] [WINDOW] Finestra trovata: WindowRect(left=-9, top=-9, width=1938, height=1038)
+2026-02-22 11:44:56,155 [INFO] [INIT] Finestra trovata: WindowRect(left=-9, top=-9, width=1938, height=1038)
+2026-02-22 11:44:56,165 [INFO] [SCREEN] Template Golden Cookie caricato: C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\golden_cookie_template.png
+2026-02-22 11:45:01,234 [INFO] [INIT] Prima lettura dello stato del gioco...
+2026-02-22 11:45:02,130 [INFO] [INIT] Stato iniziale: GameState(cookies=0, cps=0.0, buildings=0, upgrades=8)
+2026-02-22 11:45:02,131 [INFO] [CLICKER] Avviato — 20 click/sec
+2026-02-22 11:45:02,131 [INFO] [THREAD] 'CookieClicker' avviato.
+2026-02-22 11:45:02,132 [INFO] [GOLDEN] Scanner avviato — ogni 0.5s
+2026-02-22 11:45:02,132 [INFO] [THREAD] 'GoldenCookie' avviato.
+2026-02-22 11:45:02,186 [INFO] [BUY] Loop acquisti avviato — ogni 2.0s
+2026-02-22 11:45:02,189 [INFO] [THREAD] 'BuyLoop' avviato.
+2026-02-22 11:45:02,251 [INFO] 
+2026-02-22 11:45:02,284 [INFO] ✅ Bot attivo! Premi CTRL+C per fermarlo.
+2026-02-22 11:45:02,286 [INFO] 
+2026-02-22 11:45:32,287 [INFO] [STATS] 🍪 Cookie: 0 | CPS: 0.0 | Strutture: 0
+2026-02-22 11:45:33,902 [INFO] 
+2026-02-22 11:45:33,903 [INFO] [STOP] CTRL+C ricevuto — arresto del bot...
+2026-02-22 11:45:34,523 [INFO] [STOP] Bot fermato. Arrivederci!

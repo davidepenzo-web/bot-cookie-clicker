@@ -160,10 +160,37 @@ def main():
     print("  Partenza!                                              ")
     print("")
 
-    # Prima lettura dello stato prima di avviare i thread
-    log.info("[INIT] Prima lettura dello stato del gioco...")
+    # ── Fase di inizializzazione ─────────────────────────────────────────
+    log.info("[INIT] Fase di inizializzazione — lettura stato del gioco...")
     game_state.update()
+
+    # Leggi i tooltip di tutte le strutture visibili per costruire
+    # lo stato iniziale completo con prezzi e CPS reali
+    visible = [b for b in game_state.buildings if b.get("visible", True)]
+    if visible:
+        log.info(f"[INIT] Lettura tooltip per {len(visible)} strutture visibili...")
+        for b in visible:
+            data = tooltip_reader.read_building_data(b)
+            if data["price"] > 0:
+                strategy._cache[b["name"]] = {
+                    "price":      data["price"],
+                    "cps_single": data["cps_single"],
+                    "cps_total":  data["cps_total"],
+                    "timestamp":  time.time(),
+                }
+                log.info(
+                    f"[INIT] {b['name']:<20} "
+                    f"price={data['price']:>15,.0f}  "
+                    f"cps_single={data['cps_single']:>10,.1f}"
+                )
+            else:
+                log.warning(f"[INIT] {b['name']}: tooltip non letto (OCR fallito)")
+        strategy._last_full_read = time.time()
+    else:
+        log.warning("[INIT] Nessuna struttura visibile trovata")
+
     log.info(f"[INIT] Stato iniziale: {game_state}")
+    log.info(f"[INIT] Cache tooltip: {len(strategy._cache)} strutture caricate")
 
     # ── Avvio thread ────────────────────────────────────────────────────────
     stop_event = threading.Event()
