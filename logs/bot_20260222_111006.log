@@ -1,0 +1,7 @@
+2026-02-22 11:10:06,002 [INFO] ==================================================
+2026-02-22 11:10:06,003 [INFO]   🍪 Cookie Clicker Bot — Avvio
+2026-02-22 11:10:06,004 [INFO] ==================================================
+2026-02-22 11:10:06,787 [INFO] [INIT] Cerco la finestra di Cookie Clicker su Steam...
+2026-02-22 11:10:07,116 [INFO] [WINDOW] Finestra trovata: WindowRect(left=-9, top=-9, width=1938, height=1038)
+2026-02-22 11:10:07,133 [INFO] [INIT] Finestra trovata: WindowRect(left=-9, top=-9, width=1938, height=1038)
+2026-02-22 11:10:07,142 [INFO] [SCREEN] Template Golden Cookie caricato: C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\golden_cookie_template.png

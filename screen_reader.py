@@ -346,6 +346,10 @@ class ScreenReader:
                 rect.bottom,
             ))
             shop_np = np.array(shop_img)
+            # Salva screenshot di debug per verificare cosa vede il bot
+            from pathlib import Path
+            Path("logs").mkdir(exist_ok=True)
+            shop_img.save("logs/debug_shop.png")
         except Exception as e:
             log.warning(f"[SHOP] Screenshot negozio fallito: {e}")
             return []
@@ -379,9 +383,9 @@ class ScreenReader:
 
             row_pixels = shop_np[row_top_c:row_bottom_c, :, :]
 
-            # Campiona solo la meta' sinistra della riga (icona + nome)
-            # per evitare il numero di quantita' sulla destra
-            half = row_pixels[:, : shop_w // 2, :]
+            # Campiona solo la meta' DESTRA della riga (numeri quantita' e prezzo)
+            # La meta' destra non viene mai coperta da popup o finestre sovrapposte
+            half = row_pixels[:, shop_w // 2 :, :]
             mean_r = float(half[:, :, 0].mean())
             mean_g = float(half[:, :, 1].mean())
             mean_b = float(half[:, :, 2].mean())

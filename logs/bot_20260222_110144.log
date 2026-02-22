@@ -1,0 +1,74 @@
+2026-02-22 11:01:44,329 [INFO] ==================================================
+2026-02-22 11:01:44,335 [INFO]   🍪 Cookie Clicker Bot — Avvio
+2026-02-22 11:01:44,339 [INFO] ==================================================
+2026-02-22 11:01:49,935 [INFO] [INIT] Cerco la finestra di Cookie Clicker su Steam...
+2026-02-22 11:01:50,238 [INFO] [WINDOW] Finestra trovata: WindowRect(left=-9, top=-9, width=1938, height=1038)
+2026-02-22 11:01:50,239 [INFO] [INIT] Finestra trovata: WindowRect(left=-9, top=-9, width=1938, height=1038)
+2026-02-22 11:01:50,315 [INFO] [SCREEN] Template Golden Cookie caricato: C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\golden_cookie_template.png
+2026-02-22 11:01:55,328 [INFO] [INIT] Prima lettura dello stato del gioco...
+2026-02-22 11:01:57,206 [INFO] [INIT] Stato iniziale: GameState(cookies=0, cps=0.0, buildings=0, upgrades=8)
+2026-02-22 11:01:57,208 [INFO] [CLICKER] Avviato — 20 click/sec
+2026-02-22 11:01:57,208 [INFO] [THREAD] 'CookieClicker' avviato.
+2026-02-22 11:01:57,208 [INFO] [GOLDEN] Scanner avviato — ogni 0.5s
+2026-02-22 11:01:57,209 [INFO] [THREAD] 'GoldenCookie' avviato.
+2026-02-22 11:01:57,264 [INFO] [BUY] Loop acquisti avviato — ogni 2.0s
+2026-02-22 11:01:57,264 [INFO] [THREAD] 'BuyLoop' avviato.
+2026-02-22 11:01:57,306 [INFO] 
+2026-02-22 11:01:57,349 [INFO] ✅ Bot attivo! Premi CTRL+C per fermarlo.
+2026-02-22 11:01:57,363 [INFO] 
+2026-02-22 11:01:58,761 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-22 11:02:02,228 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-22 11:02:05,620 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-22 11:02:08,990 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-22 11:02:12,432 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-22 11:02:15,763 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-22 11:02:19,004 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-22 11:02:22,389 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-22 11:02:25,676 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-22 11:02:27,365 [INFO] [STATS] 🍪 Cookie: 0 | CPS: 0.0 | Strutture: 0
+2026-02-22 11:02:28,973 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-22 11:02:32,367 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-22 11:02:35,715 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-22 11:02:39,229 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-22 11:02:42,625 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-22 11:02:46,004 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-22 11:02:49,250 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-22 11:02:52,543 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-22 11:02:55,845 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-22 11:02:57,371 [INFO] [STATS] 🍪 Cookie: 0 | CPS: 4.1 | Strutture: 0
+2026-02-22 11:02:59,259 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-22 11:03:02,603 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-22 11:03:05,818 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-22 11:03:09,044 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-22 11:03:12,347 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-22 11:03:15,665 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-22 11:03:18,925 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-22 11:03:22,248 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-22 11:03:25,599 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-22 11:03:27,377 [INFO] [STATS] 🍪 Cookie: 0 | CPS: 4.1 | Strutture: 0
+2026-02-22 11:03:29,149 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-22 11:03:32,466 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-22 11:03:36,023 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-22 11:03:39,441 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-22 11:03:42,801 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-22 11:03:46,014 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-22 11:03:49,269 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-22 11:03:52,611 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-22 11:03:55,921 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-22 11:03:57,379 [INFO] [STATS] 🍪 Cookie: 0 | CPS: 4.1 | Strutture: 0
+2026-02-22 11:03:59,422 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-22 11:04:03,422 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-22 11:04:06,784 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-22 11:04:10,254 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-22 11:04:13,673 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-22 11:04:17,076 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-22 11:04:20,755 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-22 11:04:24,134 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-22 11:04:27,378 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-22 11:04:27,381 [INFO] [STATS] 🍪 Cookie: 0 | CPS: 4.1 | Strutture: 0
+2026-02-22 11:04:30,704 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-22 11:04:33,970 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-22 11:04:37,356 [INFO] [BUY] Acquisto: Upgrade #0 (costo: 0 | payoff: 0.0s)
+2026-02-22 11:04:39,626 [INFO] 
+2026-02-22 11:04:39,636 [INFO] [STOP] CTRL+C ricevuto — arresto del bot...
+2026-02-22 11:04:42,094 [INFO] [STOP] Bot fermato. Arrivederci!

@@ -127,6 +127,7 @@ def main():
         from clicker import Clicker
         from game_state import GameState
         from strategy import Strategy
+        from tooltip_reader import TooltipReader
     except ImportError as e:
         log.error(f"Modulo mancante: {e}")
         log.error("Assicurati di aver creato tutti i moduli del progetto.")
@@ -144,10 +145,11 @@ def main():
     log.info(f"[INIT] Finestra trovata: {window.rect}")
 
     # Passa il rect della finestra a tutti i moduli che ne hanno bisogno
-    screen_reader = ScreenReader(window, config=CONFIG)
-    clicker       = Clicker(window)
-    game_state    = GameState(screen_reader)
-    strategy      = Strategy()
+    screen_reader  = ScreenReader(window, config=CONFIG)
+    clicker        = Clicker(window)
+    game_state     = GameState(screen_reader)
+    tooltip_reader = TooltipReader(window, clicker)
+    strategy       = Strategy(tooltip_reader=tooltip_reader)
 
     # Conto alla rovescia: dai tempo all'utente di passare al gioco
     countdown = 5
