@@ -5,3 +5,30 @@
 2026-02-22 11:58:20,702 [INFO] [WINDOW] Finestra trovata: WindowRect(left=-9, top=-9, width=1938, height=1038)
 2026-02-22 11:58:20,703 [INFO] [INIT] Finestra trovata: WindowRect(left=-9, top=-9, width=1938, height=1038)
 2026-02-22 11:58:20,719 [INFO] [SCREEN] Template Golden Cookie caricato: C:\Users\Laptop\OneDrive\Desktop\bot cookie clicker\golden_cookie_template.png
+2026-02-22 11:58:25,812 [INFO] [INIT] Fase di inizializzazione — lettura stato del gioco...
+2026-02-22 11:58:26,705 [INFO] [INIT] Lettura tooltip per 11 strutture visibili...
+2026-02-22 11:58:27,484 [INFO] [INIT] Cursore              price=              2  cps_single=       0.0
+2026-02-22 11:58:28,129 [WARNING] [INIT] Nonna: tooltip non letto (OCR fallito)
+2026-02-22 11:58:28,861 [INFO] [INIT] Fattoria             price=             75  cps_single=       0.0
+2026-02-22 11:58:29,508 [WARNING] [INIT] Miniera: tooltip non letto (OCR fallito)
+2026-02-22 11:58:30,338 [WARNING] [INIT] Fabbrica: tooltip non letto (OCR fallito)
+2026-02-22 11:58:30,875 [WARNING] [INIT] Banca: tooltip non letto (OCR fallito)
+2026-02-22 11:58:31,499 [INFO] [INIT] Tempio               price=              4  cps_single=       0.0
+2026-02-22 11:58:32,137 [WARNING] [INIT] Torre del mago: tooltip non letto (OCR fallito)
+2026-02-22 11:58:33,023 [WARNING] [INIT] Nave spaziale: tooltip non letto (OCR fallito)
+2026-02-22 11:58:34,056 [WARNING] [INIT] Alchimia: tooltip non letto (OCR fallito)
+2026-02-22 11:58:34,644 [WARNING] [INIT] Portale: tooltip non letto (OCR fallito)
+2026-02-22 11:58:34,645 [INFO] [INIT] Stato iniziale: GameState(cookies=0, cps=0.0, buildings=0, upgrades=8)
+2026-02-22 11:58:34,645 [INFO] [INIT] Cache tooltip: 3 strutture caricate
+2026-02-22 11:58:34,646 [INFO] [CLICKER] Avviato — 20 click/sec
+2026-02-22 11:58:34,647 [INFO] [THREAD] 'CookieClicker' avviato.
+2026-02-22 11:58:34,648 [INFO] [GOLDEN] Scanner avviato — ogni 0.5s
+2026-02-22 11:58:34,649 [INFO] [THREAD] 'GoldenCookie' avviato.
+2026-02-22 11:58:34,725 [INFO] [BUY] Loop acquisti avviato — ogni 2.0s
+2026-02-22 11:58:34,726 [INFO] [THREAD] 'BuyLoop' avviato.
+2026-02-22 11:58:34,799 [INFO] 
+2026-02-22 11:58:34,805 [INFO] ✅ Bot attivo! Premi CTRL+C per fermarlo.
+2026-02-22 11:58:34,818 [INFO] 
+2026-02-22 11:59:04,820 [INFO] [STATS] 🍪 Cookie: 0 | CPS: 0.0 | Strutture: 0
+2026-02-22 11:59:34,826 [INFO] [STATS] 🍪 Cookie: 0 | CPS: 0.0 | Strutture: 0
+2026-02-22 12:00:04,827 [INFO] [STATS] 🍪 Cookie: 0 | CPS: 0.0 | Strutture: 0
